@@ -1,0 +1,70 @@
+{% extends "Layouts/Normal/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="d-flex" style="direction:RTL; text-align: right;margin-top: 30px">
+            <div class="col-sm-12 col-md-9 "  id="new">
+                <div class="container">
+                    <span class="list-group-item text-center" style="margin-bottom: 5px"><b>{{ post.title }}</b></span>
+                    {% include "Layouts/Normal/slider.html" %}
+                    <div class="row">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="">
+
+                                                    <hr>
+                                                    <pre class="text-justify">
+                                                        <h3>مشروح خبر :</h3><br>{{ post.body }}
+                                                    </pre>
+                                                    <hr>
+                                                    <small>{{ post.created }}</small><br>
+                                                    <hr>
+                                                    دسته بندی ها : {{ post.category }}
+                                                    <hr>
+                                                    <form method="post" action="#">
+                                                        {% csrf_token %}
+                                                        <div class="form-group shadow-textarea">
+                                                            <label for="exampleFormControlTextarea6">نظر خود را با ما به اشتراک بگذارید</label>
+                                                            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="چیزی بنویسید برای ما ..."></textarea>
+                                                        </div>
+                                                        <input type="submit" class="btn btn-info" value="اضافه کردن">
+                                                    </form>
+                                                    <div class='container'>
+                                                        <div class=" card comment-box">
+                                                            {% if post.comment_set.all %}
+                                                                {% for comment in post.comment_set.all %}
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-header">{{ comment.email }}</h5>
+                                                                        <p style="border: 2px solid rgba(214,214,214,1.00);padding: 5px">{{ comment.body }}</p>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            {% else %}
+                                                                <h4>هنوز نظری ثبت نشده است</h4>
+                                                            {% endif %}
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include "Layouts/Normal/sidbarLeft1.html" %}
+
+    </div>
+
+{% endblock %}

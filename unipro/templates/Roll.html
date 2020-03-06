@@ -1,0 +1,90 @@
+{% extends 'Layouts/Normal/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex" style="direction:RTL; text-align: right;margin-top: 30px">
+            <div class="col-sm-12"  id="new">
+                <div class="container">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                       {% for category in allcategory %}
+                            <li class="nav-item">
+                                {% if forloop.first %}
+                                    <a class="nav-link active" id="pills-{{category.id}}-tab" data-toggle="pill" href="#pills-{{category.id}}" role="tab" aria-controls="pills-{{category.id}}" aria-selected="true">{{category.name}}</a>
+                                {% else %}
+                                    <a class="nav-link " id="pills-{{category.id}}-tab" data-toggle="pill" href="#pills-{{category.id}}" role="tab" aria-controls="pills-{{category.id}}" aria-selected="true">{{category.name}}</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content white" id="pills-tabContent">
+                        {% for category in allcategory %}
+                            {% if forloop.first %}
+                                <div class="tab-pane fade show active" id="pills-{{category.id}}" role="tabpanel" aria-labelledby="pills-{{category.id}}-tab">
+                                    <div class="row" style="padding: 20px">
+                                        <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                            {% for post in allpost %}
+                                                {% if post.categoryguid.id == category.id %}
+                                                    {% if forloop.first %}
+                                                        <a class="nav-link active" id="v-pills-{{ post.id }}-tab" data-toggle="pill" href="#v-pills-{{ post.id }}" role="tab" aria-controls="v-pills-{{ post.id }}" aria-selected="true">{{ post.name }}</a>
+                                                        {% else %}
+                                                        <a class="nav-link" id="v-pills-{{ post.id }}-tab" data-toggle="pill" href="#v-pills-{{ post.id }}" role="tab" aria-controls="v-pills-{{ post.id }}" aria-selected="false">{{ post.name }}</a>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="tab-content col-md-9" id="v-pills-tabContent">
+                                            {% for post in allpost %}
+                                                {% if post.categoryguid.id == category.id %}
+                                                    {% if forloop.first %}
+                                                        <div class="tab-pane fade show active" id="v-pills-{{ post.id }}" role="tabpanel" aria-labelledby="v-pills-{{ post.id }}-tab">
+                                                            {% include "Layouts/Normal/RollPost.html" with post=post %}
+                                                        </div>
+                                                        {% else %}
+                                                        <div class="tab-pane fade" id="v-pills-{{ post.id }}" role="tabpanel" aria-labelledby="v-pills-{{ post.id }}-tab">
+                                                            {% include "Layouts/Normal/RollPost.html" with post=post %}
+                                                        </div>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                         </div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="tab-pane fade" id="pills-{{category.id}}" role="tabpanel" aria-labelledby="pills-{{category.id}}-tab">
+                                    <div class="row" style="padding: 20px">
+                                        <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                            {% for post in allpost %}
+                                                {% if post.categoryguid_id == category.id %}
+                                                    {% if forloop.first %}
+                                                        <a class="nav-link active" id="v-pills-{{ post.id }}-tab" data-toggle="pill" href="#v-pills-{{ post.id }}" role="tab" aria-controls="v-pills-{{ post.id }}" aria-selected="true">{{ post.name }}</a>
+                                                        {% else %}
+                                                        <a class="nav-link" id="v-pills-{{ post.id }}-tab" data-toggle="pill" href="#v-pills-{{ post.id }}" role="tab" aria-controls="v-pills-{{ post.id }}" aria-selected="false">{{ post.name }}</a>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="tab-content col-md-9" id="v-pills-tabContent">
+                                            {% for post in allpost %}
+                                                {% if post.categoryguid.id == category.id %}
+                                                    {% if forloop.first %}
+                                                        <div class="tab-pane fade show active" id="v-pills-{{ post.id }}" role="tabpanel" aria-labelledby="v-pills-{{ post.id }}-tab">
+                                                            {% include "Layouts/Normal/RollPost.html" with post=post %}
+                                                        </div>
+                                                        {% else %}
+                                                        <div class="tab-pane fade" id="v-pills-{{ post.id }}" role="tabpanel" aria-labelledby="v-pills-{{ post.id }}-tab">
+                                                            {% include "Layouts/Normal/RollPost.html" with post=post %}
+                                                        </div>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br>
+{% endblock %}

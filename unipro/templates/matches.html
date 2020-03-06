@@ -1,0 +1,234 @@
+{% extends "Layouts/Normal/base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="" style="">
+    <div class="d-flex" style="direction:RTL; text-align: right;margin-top: 30px">
+        <div class="container" id="new">
+          <span class="list-group-item text-center" style="margin-bottom: 5px"><b>مسابقات</b></span>
+          <div class="list-group-item text-center">
+            <div class="container">
+              <form class="form-horizontal" method="post" action="#">
+                <div class="row">
+                  <div class="col-md-2" >
+                    <label>نوع مسابقه</label>
+                    <select id="mySelect" data-show-content="true" class="form-control border">
+                      <option>همه موارد</option>
+                      <option >اتوموبیلرانی</option>
+                      <option >موتورسواری</option>
+                    </select>
+                  </div>
+                  <div  class="col-md-2">
+                    <label>دسته بندی</label>
+                    <select id="mySelect1" data-show-content="true" class="form-control border">
+                      <option>همه موارد</option>
+                      <option >اتوموبیلرانی</option>
+                      <option >موتورسواری</option>
+                    </select>
+                  </div>
+                  <div  class="col-md-2">
+                    <label>وضعیت</label>
+                    <select id="mySelect2" data-show-content="true" class="form-control border">
+                      <option>همه موارد</option>
+                      <option>اتمام</option>
+                      <option >ثبت نام</option>
+                      <option >در حال برگزاری</option>
+                    </select>
+                  </div>
+                  <div  class="col-md-2">
+                  </div>
+                  <div  class="col-md-2">
+                    <label>استان</label>
+                    <select id="mySelect3" data-show-content="true" class="form-control border">
+                      <option>همه موارد</option>
+                      <option>تهران</option>
+                      <option >قزوین</option>
+                      <option >البرز</option>
+                    </select>
+                  </div>
+                  <div  class="col-md-2">
+                    <label>شهر</label>
+                    <select id="mySelect4" data-show-content="true" class="form-control border">
+                      <option>همه موارد</option>
+                      <option>تهران</option>
+                      <option >قزوین</option>
+                      <option >کرج</option>
+                    </select>
+                  </div>
+
+                  <div  class="col-md-3" style="margin-top: 20px">
+                    <div class="">
+                      <label>از تاریخ : </label>
+                      <div class="">
+                        <div class="input-group">
+                          <input type="date" class="form-control" name="" id="" placeholder="----/--/--" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div  class="col-md-3" style="margin-top: 20px">
+                    <div class="">
+                      <label>تا تاریخ : </label>
+                      <div class="">
+                        <div class="input-group">
+                          <input type="date" class="form-control" name=""  placeholder="----/--/--" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3"></div>
+                  <div class="col-md-3" style="margin-top: 30px">
+                    <input class="btn btn-primary  " type="submit" value="جست و جو">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class=" align-self-start" style="margin-bottom: 10px">
+                    <div class="card mb card-columns">
+                      <img class="card-img-top" src="{% static 'img/card/5.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="align-self-start" style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/1.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" align-self-start" style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/2.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div  style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/3.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/4.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/6.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/7.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top"  src="{% static 'img/card/8.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  style="margin-bottom: 10px">
+                    <div class="card mb">
+                      <img class="card-img-top" src="{% static 'img/card/9.jpg' %}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title">متن تست نمونه</h5>
+                        <p class="card-text">وضعیت برگزاری : </p>
+                        <p class="card-text">از تاریخ : </p>
+                        <p class="card-text">تا تاریخ : </p>
+                        <p class="card-text">مکان : </p>
+                        <button type="button" class="btn btn-primary mb">اطلاعات / ثبت نام</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- pagination -->
+              <ul class="pagination justify-content-center" style="margin:20px 0">
+                <li class="page-item"><a class="page-link" href="#">صفحه بعد</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">صفحه قبل</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    <hr>
+      <div class="text-center" style="margin-top: 20px">
+        <img src="{% static 'img/طراحی-بنر-نت-برگ.gif' %}"  alt="logo fdrestion">
+        <br><br>
+      </div>
+  </div>
+{% endblock %}

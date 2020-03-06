@@ -1,0 +1,72 @@
+{% extends 'Layouts/Normal/base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block content %}
+<div class="" style="">
+    {% include "Layouts/Normal/slider.html" %}
+    <div class="d-flex" style="margin-top: 30px">
+      <div class="col-sm-12 col-md-9 "  id="new">
+        <div class="container" style="text-align: center" >
+          <span class="list-group-item text-center" style="margin-bottom: 5px"><b>اخبار</b></span>
+          <div class="row">
+            <div class="container" >
+              <div class="row" style="text-align: right">
+              {% for post in posts %}
+                  {% if forloop.first %}
+                      <div class="col-md-4">
+                  {% endif %}
+                  {% with forloop.counter0|mod:3  as i %}
+                  {% if forloop.counter0 > 0 and i == 0   %}
+                    </div>
+                    <div class="col-md-4" >
+                  {% endif %}
+                  {% endwith %}
+                    <div class=" align-self-start" style="margin-bottom: 10px">
+                    <div class="card mb card-columns">
+                      <img class="card-img-top" src="{{ post.defaultImage.url }}" alt="Card image cap">
+                      <div class="card-body mb">
+                        <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+                        <p class="card-text">{{ post.abstract }}</p>
+                          <p>{{ post.created }}</p>
+                      </div>
+                        <div class="card-footer mb">
+                            دسته بندی : {{ post.category }}
+                        </div>
+                    </div>
+                  </div>
+                  {% if forloop.last %}
+                      </div>
+                  {% endif %}
+              {% endfor %}
+              </div>
+              <a href="{% url 'blog:News' %}" class="btn btn-info col-md-3">بیشتر</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 text-center" id="importNews">
+        {% include "Layouts/Normal/sidbarLeft1.html" %}
+      </div>
+    </div>
+    <hr>
+      <div class="text-center" style="margin-top: 20px">
+        <img src="{% static 'img/طراحی-بنر-نت-برگ.gif' %}"  alt="logo fdrestion">
+        <br><br>
+      </div>
+      <div class="text-center" >
+        <span>همکاران</span>
+        <br>
+        <br>
+        <div class="text-center ">
+
+          <img style="width: 80px; height: 80px;margin-left: 20px" src="{% static 'img/logo/Rahvar-logo-LimooGraphic.png' %}"  alt="logo fdrestion">
+          <img style="width: 80px; height: 80px;margin-left: 20px" src="{% static 'img/logo/لوگوی شهرداری.png' %}"  alt="logo fdrestion">
+          <img style="width: 80px; height: 80px;margin-left: 20px" src="{% static 'img/logo/کاربرد-پیامک-در-هلال-احمر.png' %}"  alt="logo fdrestion">
+          <img style="width: 80px; height: 80px;margin-left: 20px" src="{% static 'img/logo/11111111-256x300.png' %}"  alt="logo fdrestion">
+        </div>
+        <br>
+      </div>
+  </div>
+
+{% endblock %}

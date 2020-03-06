@@ -1,0 +1,20 @@
+{% extends "Layouts/Normal/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex" style="margin-top: 30px">
+        <div class="col-sm-12 col-md-9 ">
+             <div class="container">
+                <span class="list-group-item text-center" style="margin-bottom: 5px"><b>اخبار</b></span>
+             </div>
+        </div>
+        <div class="col-sm-12 col-md-3 text-center">
+            {% include "Layouts/Normal/sidbarLeft1.html" %}
+        </div>
+    </div>
+    <hr>
+      <div class="text-center" style="margin-top: 20px">
+        <img src="{% static 'img/طراحی-بنر-نت-برگ.gif' %}"  alt="logo fdrestion">
+      </div>
+        <br><br>
+      </div>{% endblock %}
